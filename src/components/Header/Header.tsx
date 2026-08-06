@@ -1,0 +1,74 @@
+"use client";
+
+import { useState } from "react";
+
+import { NAV_LINKS } from "@/lib/nav-links";
+import { cn } from "@/lib/utils";
+import MobileMenu from "./MobileMenu";
+
+const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const closeMenu = () => setMenuOpen(false);
+
+  return (
+    <header>
+      <nav
+        aria-label="Primary"
+        className="fixed top-3.5 left-1/2 z-200 flex w-[calc(100vw_-_32px)] -translate-x-1/2 items-center justify-between gap-0.5 border border-sidebar-border bg-sidebar/86 py-3 px-3.5 backdrop-blur-[14px] sm:top-5 sm:w-auto sm:justify-start sm:py-2 sm:px-2 sm:pl-[22px]"
+      >
+        <a
+          href="#hero"
+          onClick={closeMenu}
+          className="font-mono text-sm leading-none font-semibold tracking-[0.02em] text-sidebar-foreground no-underline"
+        >
+          MAKS<span className="text-primary">.</span>
+        </a>
+
+        <div className="hidden items-center gap-0.5 sm:flex">
+          {NAV_LINKS.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="px-3.5 py-2.5 font-sans text-sm leading-none text-sidebar-foreground/75 no-underline transition-colors hover:text-sidebar-foreground"
+            >
+              {link.label}
+            </a>
+          ))}
+          <a
+            href="#"
+            className="ml-2 bg-primary px-[18px] py-2.5 font-sans text-[13px] leading-none font-semibold whitespace-nowrap text-primary-foreground no-underline transition-colors hover:bg-accent"
+          >
+            Resume
+          </a>
+        </div>
+
+        <button
+          type="button"
+          onClick={() => setMenuOpen((v) => !v)}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-nav-panel"
+          className="flex size-8 flex-col items-center justify-center gap-[5px] bg-transparent sm:hidden"
+        >
+          <span
+            className={cn(
+              "block h-0.5 w-full bg-sidebar-foreground transition-transform duration-300 ease-out",
+              menuOpen ? "translate-y-[3.5px] rotate-45" : "translate-y-0 rotate-0"
+            )}
+          />
+          <span
+            className={cn(
+              "block h-0.5 w-full bg-sidebar-foreground transition-transform duration-300 ease-out",
+              menuOpen ? "-translate-y-[3.5px] -rotate-45" : "translate-y-0 rotate-0"
+            )}
+          />
+        </button>
+      </nav>
+
+      <MobileMenu open={menuOpen} onClose={closeMenu} />
+    </header>
+  );
+};
+
+export default Header;
