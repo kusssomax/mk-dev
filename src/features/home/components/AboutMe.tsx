@@ -15,7 +15,7 @@ const AboutMe = () => {
       className="bg-background px-5 pt-27.5 pb-22.5 text-foreground sm:px-12 sm:pt-45 sm:pb-40"
     >
       <div className="mx-auto max-w-310">
-        <SectionHeading num="01" title="About" detail="Who I am" />
+        <SectionHeading title="About" detail="Who I am" />
 
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(300px,1.2fr)_minmax(280px,1fr)] lg:gap-25">
           <motion.div

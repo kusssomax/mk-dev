@@ -1,15 +1,13 @@
 import { cn } from "@/lib/utils";
 
 interface SectionHeadingProps {
-  num: string;
   title: string;
-  detail: string;
+  detail?: string;
   className?: string;
   detailClassName?: string;
 }
 
 const SectionHeading = ({
-  num,
   title,
   detail,
   className,
@@ -23,9 +21,11 @@ const SectionHeading = ({
       )}
     >
       <span>
-        {num} — {title}
+        {title}
       </span>
-      <span className={cn("text-muted-foreground", detailClassName)}>{detail}</span>
+      {detail && (
+        <span className={cn("text-muted-foreground", detailClassName)}>{detail}</span>
+      )}
     </div>
   );
 };

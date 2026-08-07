@@ -6,14 +6,18 @@ export interface SkillGroup {
 export const SKILL_GROUPS: SkillGroup[] = [
   {
     name: "Frontend",
-    items: ["React", "TypeScript", "Next.js", "Redux / Zustand", "Tailwind CSS"],
+    items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "SCSS", "shadcn/ui"],
   },
   {
-    name: "Backend",
-    items: ["Node.js", "Express", "PostgreSQL", "GraphQL", "REST APIs"],
+    name: "Backend & Data",
+    items: ["Node.js", "PostgreSQL", "Prisma ORM", "MongoDB", "REST API"],
   },
   {
-    name: "Tools",
-    items: ["Git", "Docker", "AWS", "CI/CD", "Figma"],
+    name: "State & Forms",
+    items: ["Redux Toolkit / RTK Query", "TanStack Query", "React Hook Form", "Zod"],
+  },
+  {
+    name: "Tools & AI",
+    items: ["Git", "GitHub Actions (CI/CD)", "Vite", "Figma", "Gemini API"],
   },
 ];

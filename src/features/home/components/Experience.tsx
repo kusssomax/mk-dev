@@ -15,7 +15,6 @@ const Experience = () => {
     >
       <div className="mx-auto max-w-310">
         <SectionHeading
-          num="02"
           title="Experience"
           detail={EXPERIENCE_RANGE}
           detailClassName="text-sidebar-foreground/70"
