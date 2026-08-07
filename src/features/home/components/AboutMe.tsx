@@ -1,32 +1,28 @@
 "use client";
 
-import { cn } from "@/lib/utils";
+import { motion } from "motion/react";
+
 import { Badge } from "@/components/ui/badge";
 import SectionHeading from "@/features/home/components/SectionHeading";
-import { useScrollReveal } from "@/features/home/hooks/useScrollReveal";
+import { EASE_OUT } from "@/lib/easing";
 import { ABOUT_HEADLINE, ABOUT_PARAGRAPH } from "@/features/home/data/about-content";
 import { SKILL_GROUPS } from "@/features/home/data/skill-groups";
 
-const REVEAL_TRANSITION = "transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]";
-
 const AboutMe = () => {
-  const { ref: sectionRef, revealed } = useScrollReveal<HTMLElement>();
-
   return (
     <section
       id="about"
-      ref={sectionRef}
-      className="bg-background px-5 pt-[110px] pb-[90px] text-foreground sm:px-12 sm:pt-[180px] sm:pb-[160px]"
+      className="bg-background px-5 pt-27.5 pb-22.5 text-foreground sm:px-12 sm:pt-45 sm:pb-40"
     >
       <div className="mx-auto max-w-310">
         <SectionHeading num="01" title="About" detail="Who I am" />
 
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(300px,1.2fr)_minmax(280px,1fr)] lg:gap-25">
-          <div
-            className={cn(
-              REVEAL_TRANSITION,
-              revealed ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-            )}
+          <motion.div
+            initial={{ opacity: 0, y: 32 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7, ease: EASE_OUT }}
           >
             <p className="m-0 mb-8 text-[clamp(26px,4vw,46px)] leading-[1.2] font-semibold tracking-[-0.01em]">
               {ABOUT_HEADLINE.before}
@@ -36,16 +32,15 @@ const AboutMe = () => {
             <p className="m-0 max-w-130 text-[17px] leading-[1.7] font-normal text-muted-foreground">
               {ABOUT_PARAGRAPH}
             </p>
-          </div>
+          </motion.div>
 
-          <div
-            style={{ transitionDelay: revealed ? "120ms" : "0ms" }}
-            className={cn(
-              REVEAL_TRANSITION,
-              revealed ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-            )}
+          <motion.div
+            initial={{ opacity: 0, y: 32 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7, delay: 0.12, ease: EASE_OUT }}
           >
-            <div className="mb-6 font-mono text-[13px] tracking-[0.1em] text-muted-foreground uppercase">
+            <div className="mb-6 font-mono text-[13px] tracking-widest text-muted-foreground uppercase">
               Stack
             </div>
 
@@ -61,7 +56,7 @@ const AboutMe = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

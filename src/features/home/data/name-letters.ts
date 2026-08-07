@@ -1,13 +1,13 @@
 export interface NameLetter {
   char: string;
-  delay: string;
+  delay: number;
   accent?: boolean;
 }
 
 export const NAME_LETTERS: NameLetter[] = [
-  { char: "M", delay: "0.05s" },
-  { char: "a", delay: "0.12s" },
-  { char: "k", delay: "0.19s" },
-  { char: "s", delay: "0.26s" },
-  { char: ".", delay: "0.33s", accent: true },
+  { char: "M", delay: 0.05 },
+  { char: "a", delay: 0.12 },
+  { char: "k", delay: 0.19 },
+  { char: "s", delay: 0.26 },
+  { char: ".", delay: 0.33, accent: true },
 ];

@@ -8,10 +8,6 @@ interface SectionHeadingProps {
   detailClassName?: string;
 }
 
-/**
- * "NN — Title  ···  detail" eyebrow row shared by every home-page section
- * (About, Experience, Projects, Contact).
- */
 const SectionHeading = ({
   num,
   title,

@@ -1,13 +1,15 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "motion/react";
 
 import { NAV_LINKS } from "@/lib/nav-links";
-import { cn } from "@/lib/utils";
+import { useMagnetic } from "@/hooks/useMagnetic";
 import MobileMenu from "./MobileMenu";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const resumeMagnetic = useMagnetic();
 
   const closeMenu = () => setMenuOpen(false);
 
@@ -35,12 +37,15 @@ const Header = () => {
               {link.label}
             </a>
           ))}
-          <a
+          <motion.a
             href="#"
+            style={resumeMagnetic.style}
+            onMouseMove={resumeMagnetic.onMouseMove}
+            onMouseLeave={resumeMagnetic.onMouseLeave}
             className="ml-2 bg-primary px-[18px] py-2.5 font-sans text-[13px] leading-none font-semibold whitespace-nowrap text-primary-foreground no-underline transition-colors hover:bg-accent"
           >
             Resume
-          </a>
+          </motion.a>
         </div>
 
         <button
@@ -51,17 +56,15 @@ const Header = () => {
           aria-controls="mobile-nav-panel"
           className="flex size-8 flex-col items-center justify-center gap-[5px] bg-transparent sm:hidden"
         >
-          <span
-            className={cn(
-              "block h-0.5 w-full bg-sidebar-foreground transition-transform duration-300 ease-out",
-              menuOpen ? "translate-y-[3.5px] rotate-45" : "translate-y-0 rotate-0"
-            )}
+          <motion.span
+            animate={{ rotate: menuOpen ? 45 : 0, y: menuOpen ? 4 : 0 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="block h-0.5 w-full bg-sidebar-foreground"
           />
-          <span
-            className={cn(
-              "block h-0.5 w-full bg-sidebar-foreground transition-transform duration-300 ease-out",
-              menuOpen ? "-translate-y-[3.5px] -rotate-45" : "translate-y-0 rotate-0"
-            )}
+          <motion.span
+            animate={{ rotate: menuOpen ? -45 : 0, y: menuOpen ? -4 : 0 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="block h-0.5 w-full bg-sidebar-foreground"
           />
         </button>
       </nav>

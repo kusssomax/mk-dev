@@ -50,10 +50,6 @@ html {
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
-  --animate-letter-in: letterIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-  --animate-hero-fade: heroFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-  --animate-pulse-dot: pulseDot 1.8s ease-in-out infinite;
-  --animate-bounce-arrow: bounceArrow 1.8s ease-in-out infinite;
 }
 
 :root {
@@ -134,47 +130,5 @@ html {
   }
   html {
     @apply font-sans;
-  }
-}
-
-@keyframes letterIn {
-  from {
-    opacity: 0;
-    transform: translateY(0.4em);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes heroFade {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes pulseDot {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.25;
-  }
-}
-
-@keyframes bounceArrow {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(8px);
   }
 }
