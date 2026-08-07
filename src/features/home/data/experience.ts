@@ -8,32 +8,15 @@ export interface ExperienceItem {
 
 export const EXPERIENCE: ExperienceItem[] = [
   {
-    dates: "2023 — Present",
-    role: "Senior Full-Stack Engineer",
-    company: "Nimbus Labs",
+    dates: "March 2025 — Present",
+    role: "Full-stack Engineer",
+    company: "InsAlder",
     highlight:
-      "Rebuilt the core platform on Next.js, cutting load times 40% and shipping a design system used by 6 teams.",
-    tags: ["Next.js", "TypeScript", "Node.js", "PostgreSQL"],
-  },
-  {
-    dates: "2021 — 2023",
-    role: "Full-Stack Engineer",
-    company: "Vertex Software",
-    highlight: "Built and scaled React/Node services powering products used by 200k+ people.",
-    tags: ["React", "Node.js", "Redis", "AWS"],
-  },
-  {
-    dates: "2019 — 2021",
-    role: "Frontend Developer",
-    company: "Studio Loop",
-    highlight: "Shipped design systems and interactive marketing sites for a dozen client brands.",
-    tags: ["React", "TypeScript", "GraphQL"],
+      "Core contributor to an enterprise SaaS platform for AI agents — real-time LLM chat, agent builder, MCP server integrations, and multi-tenant orgs — built on a React, TypeScript, Tailwind CSS + shadcn/ui for styling, RTK Query for state management, i18n for localization, and WebSockets for real-time communication. Also delivered two more products end to end on the same team: DTMM, a full-stack Next.js platform, and ICDTAI, a certification-platform site.",
+    tags: ["React", "TypeScript", "Next.js", "Tailwind CSS", "RTK Query", "WebSockets"],
   },
 ];
 
-/**
- * "2019 — Present" range shown next to the section heading, derived from the
- * earliest year across all entries instead of being hardcoded.
- */
+
 const startYears = EXPERIENCE.map((item) => Number(item.dates.match(/\d{4}/)?.[0]));
 export const EXPERIENCE_RANGE = `${Math.min(...startYears)} — Present`;

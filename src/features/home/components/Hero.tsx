@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import { ArrowRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { SOCIAL_LINKS } from "@/features/home/data/social-links";
@@ -80,7 +81,7 @@ const Hero = () => {
             onMouseLeave={ctaMagnetic.onMouseLeave}
             className="inline-flex items-center gap-2.5 bg-primary px-7 py-4 font-sans text-[15px] font-semibold text-primary-foreground no-underline transition-colors hover:bg-accent"
           >
-            View Work <span>→</span>
+            View Work <ArrowRight className="size-4" aria-hidden="true" />
           </motion.a>
 
           <div className="flex flex-wrap gap-5.5 font-mono text-[13px]">
@@ -88,6 +89,8 @@ const Hero = () => {
               <a
                 key={link.label}
                 href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-sidebar-foreground/70 no-underline transition-colors hover:text-sidebar-foreground"
               >
                 {link.label}

@@ -5,4 +5,4 @@ export const ABOUT_HEADLINE = {
 };
 
 export const ABOUT_PARAGRAPH =
-  "Seven years building products end to end. I care about fast feedback loops, typed code, and shipping things that hold up under real users. When I'm not writing TypeScript, I'm probably reading about it.";
+  "Two years building products end to end, coming from a background in Applied Mathematics and Systems Analysis. I care about fast feedback loops, typed code, and shipping things that hold up under real users. When I'm not writing TypeScript, I'm probably reading about it.";

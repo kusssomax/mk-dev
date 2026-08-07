@@ -22,6 +22,8 @@ const badgeVariants = cva(
         skill:
           "h-auto border-border bg-transparent px-3.5 py-[7px] font-mono text-[13px] font-normal text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground",
         tag: "h-auto border-sidebar-border bg-transparent px-2.5 py-1 font-mono text-xs font-normal text-sidebar-foreground/70",
+        tagOutline:
+          "h-auto border-border bg-transparent px-2.5 py-1 font-mono text-xs font-normal text-muted-foreground",
       },
     },
     defaultVariants: {
