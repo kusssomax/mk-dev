@@ -3,6 +3,7 @@ import { Inconsolata, Big_Shoulders, Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Header from "@/components/Header/Header";
+import MotionProvider from "@/components/motion/MotionProvider";
 
 const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
@@ -32,10 +33,12 @@ export default function RootLayout({
       className={cn("h-full", "antialiased", bigShoulders.variable, inconsolata.variable, "font-sans", inter.variable)}
     >
       <body>
-        <Header />
-        <main>
-          {children}
-        </main>
+        <MotionProvider>
+          <Header />
+          <main>
+            {children}
+          </main>
+        </MotionProvider>
       </body>
     </html>
   );
