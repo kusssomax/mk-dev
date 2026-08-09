@@ -75,11 +75,13 @@ const MobileMenu = ({ open, onClose }: MobileMenuProps) => {
             </motion.div>
 
             <a
-              href="#"
+              href="https://drive.google.com/file/d/1kzjK4ItaxObQGCLQYDfW2y7-GYuAjzkn/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={onClose}
               className="mt-8 block bg-primary p-[18px] text-center font-sans text-[15px] font-semibold text-primary-foreground no-underline hover:bg-accent"
             >
-              Download Resume
+              Resume
             </a>
           </motion.div>
         </>

@@ -18,7 +18,7 @@ const Header = () => {
     <header>
       <nav
         aria-label="Primary"
-        className="fixed top-3.5 left-1/2 z-200 flex w-[calc(100vw_-_32px)] -translate-x-1/2 items-center justify-between gap-0.5 border border-sidebar-border bg-sidebar/86 py-3 px-3.5 backdrop-blur-[14px] sm:top-5 sm:w-auto sm:justify-start sm:py-2 sm:px-2 sm:pl-[22px]"
+        className="fixed top-3.5 left-1/2 z-200 flex w-[calc(100vw_-_32px)] -translate-x-1/2 items-center justify-between gap-0.5 border border-sidebar-border bg-sidebar/86 py-3 px-3.5 backdrop-blur-[14px] sm:top-5 sm:w-auto sm:justify-start sm:py-2 sm:px-4 sm:pl-[22px]"
       >
         <a
           href="#hero"
@@ -45,7 +45,9 @@ const Header = () => {
             </a>
           ))}
           <motion.a
-            href="#"
+            href="https://drive.google.com/file/d/1kzjK4ItaxObQGCLQYDfW2y7-GYuAjzkn/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
             style={resumeMagnetic.style}
             onMouseMove={resumeMagnetic.onMouseMove}
             onMouseLeave={resumeMagnetic.onMouseLeave}
