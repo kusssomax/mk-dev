@@ -53,13 +53,14 @@ html {
 }
 
 :root {
-  --background: #E0DFDD;
-  --foreground: #150F0D;
+  /* --background: #E0DFDD; #891A20   */
+  --background: #e0dedd;
+  --foreground: #000000;
   --card: #CAC6C4;
   --card-foreground: #150F0D;
   --popover: #E0DFDD;
   --popover-foreground: #150F0D;
-  --primary: #863839;
+  --primary: #891A20;
   --primary-foreground: #E0DFDD;
   --secondary: #CAC6C4;
   --secondary-foreground: #150F0D;
@@ -77,7 +78,8 @@ html {
   --chart-4: #641E1D;
   --chart-5: #270D0E;
   --radius: 0;
-  --sidebar: #150F0D;
+  /* --sidebar: #150F0D; */
+  --sidebar: #000000;
   --sidebar-foreground: #E0DFDD;
   --sidebar-primary: #863839;
   --sidebar-primary-foreground: #E0DFDD;

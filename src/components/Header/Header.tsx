@@ -6,6 +6,7 @@ import { motion } from "motion/react";
 import { NAV_LINKS } from "@/lib/nav-links";
 import { useMagnetic } from "@/hooks/useMagnetic";
 import MobileMenu from "./MobileMenu";
+import Image from "next/image";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -22,9 +23,15 @@ const Header = () => {
         <a
           href="#hero"
           onClick={closeMenu}
-          className="font-mono text-sm leading-none font-semibold tracking-[0.02em] text-sidebar-foreground no-underline"
+          className="w-10 sm:w-12"
         >
-          MAKS<span className="text-primary">.</span>
+          <Image
+            src="/icons/MKLogo.svg"
+            alt="MK Logo"
+            width={50}
+            height={50}
+            className="h-10 w-10 sm:h-12 sm:w-12"
+          />
         </a>
 
         <div className="hidden items-center gap-0.5 sm:flex">

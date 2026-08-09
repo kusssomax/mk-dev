@@ -67,7 +67,6 @@ const MobileMenu = ({ open, onClose }: MobileMenuProps) => {
                     i !== 0 && "border-t border-border"
                   )}
                 >
-                  <span className="mr-4 font-mono text-sm text-primary">{link.num}</span>
                   <span className="font-big-shoulders text-[clamp(28px,8vw,44px)] font-extrabold leading-none tracking-[-0.01em]">
                     {link.label}
                   </span>
