@@ -6,6 +6,7 @@ import { motion } from "motion/react";
 import { NAV_LINKS } from "@/lib/nav-links";
 import { useMagnetic } from "@/hooks/useMagnetic";
 import MobileMenu from "./MobileMenu";
+import Image from "next/image";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -17,14 +18,20 @@ const Header = () => {
     <header>
       <nav
         aria-label="Primary"
-        className="fixed top-3.5 left-1/2 z-200 flex w-[calc(100vw_-_32px)] -translate-x-1/2 items-center justify-between gap-0.5 border border-sidebar-border bg-sidebar/86 py-3 px-3.5 backdrop-blur-[14px] sm:top-5 sm:w-auto sm:justify-start sm:py-2 sm:px-2 sm:pl-[22px]"
+        className="fixed top-3.5 left-1/2 z-200 flex w-[calc(100vw_-_32px)] -translate-x-1/2 items-center justify-between gap-0.5 border border-sidebar-border bg-sidebar/86 py-3 px-3.5 backdrop-blur-[14px] sm:top-5 sm:w-auto sm:justify-start sm:py-2 sm:px-4 sm:pl-[22px]"
       >
         <a
           href="#hero"
           onClick={closeMenu}
-          className="font-mono text-sm leading-none font-semibold tracking-[0.02em] text-sidebar-foreground no-underline"
+          className="w-10 sm:w-12"
         >
-          MAKS<span className="text-primary">.</span>
+          <Image
+            src="/icons/MKLogo.svg"
+            alt="MK Logo"
+            width={50}
+            height={50}
+            className="h-10 w-10 sm:h-12 sm:w-12"
+          />
         </a>
 
         <div className="hidden items-center gap-0.5 sm:flex">
@@ -38,7 +45,9 @@ const Header = () => {
             </a>
           ))}
           <motion.a
-            href="#"
+            href="https://drive.google.com/file/d/1kzjK4ItaxObQGCLQYDfW2y7-GYuAjzkn/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
             style={resumeMagnetic.style}
             onMouseMove={resumeMagnetic.onMouseMove}
             onMouseLeave={resumeMagnetic.onMouseLeave}

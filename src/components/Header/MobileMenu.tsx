@@ -67,7 +67,6 @@ const MobileMenu = ({ open, onClose }: MobileMenuProps) => {
                     i !== 0 && "border-t border-border"
                   )}
                 >
-                  <span className="mr-4 font-mono text-sm text-primary">{link.num}</span>
                   <span className="font-big-shoulders text-[clamp(28px,8vw,44px)] font-extrabold leading-none tracking-[-0.01em]">
                     {link.label}
                   </span>
@@ -76,11 +75,13 @@ const MobileMenu = ({ open, onClose }: MobileMenuProps) => {
             </motion.div>
 
             <a
-              href="#"
+              href="https://drive.google.com/file/d/1kzjK4ItaxObQGCLQYDfW2y7-GYuAjzkn/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={onClose}
               className="mt-8 block bg-primary p-[18px] text-center font-sans text-[15px] font-semibold text-primary-foreground no-underline hover:bg-accent"
             >
-              Download Resume
+              Resume
             </a>
           </motion.div>
         </>
